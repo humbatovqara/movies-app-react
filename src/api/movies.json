@@ -1,0 +1,46 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "name": "The Batman",
+      "rating": "8.3",
+      "overview": "When the Riddler, a sadistic serial killer, begins murdering key political figures in Gotham, Batman is forced to investigate the city's hidden corruption and question his family's involvement.",
+      "imgURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/ex9vdC5vZde46cbvUBHkXcdWiBy.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Spider-Man: No Way Home",
+      "rating": "8.5",
+      "overview": "With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man.",
+      "imgURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/armAY3JkCDVZKaV4djNWcUdFndD.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Uncharted",
+      "rating": "6.7",
+      "overview": "Street-smart Nathan Drake is recruited by seasoned treasure hunter Victor 'Sully' Sullivan to recover a fortune amassed by Ferdinand Magellan, and lost 500 years ago by the House of Moncada.",
+      "imgURL": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/xseSYEjz5btrQIyJF4savdlz6Fl.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Fast and Forious 9",
+      "rating": "5.2",
+      "overview": "Dom and the crew must take on an international terrorist who turns out to be Dom and Mia's estranged brother.",
+      "imgURL": "https://m.media-amazon.com/images/M/MV5BMjI0NmFkYzEtNzU2YS00NTg5LWIwYmMtNmQ1MTU0OGJjOTMxXkEyXkFqcGdeQXVyMjMxOTE0ODA@._V1_.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Sherlock Holmes",
+        "rating": "7.6",
+        "overview": "Detective Sherlock Holmes and his stalwart partner Watson engage in a battle of wits and brawn with a nemesis whose plot is a threat to all of England.",
+        "imgURL": "https://m.media-amazon.com/images/M/MV5BMTg0NjEwNjUxM15BMl5BanBnXkFtZTcwMzk0MjQ5Mg@@._V1_.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Turning Red",
+        "rating": "7.0",
+        "overview": "A 13-year-old girl named Meilin turns into a giant red panda whenever she gets too excited.",
+        "imgURL": "https://lumiere-a.akamaihd.net/v1/images/p_turningred_v2_21513_76ff27f6.png"
+    }
+  ]
+}
