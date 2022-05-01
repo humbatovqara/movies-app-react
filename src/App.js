@@ -3,7 +3,7 @@ import Search from './components/Search';
 import MovieList from './components/MovieList';
 import AddMovie from './components/AddMovie';
 import axios from 'axios';
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 class App extends React.Component {
   state = {
@@ -12,52 +12,25 @@ class App extends React.Component {
     searchQuery: ""
   }
 
-  /* async componentDidMount() {
-    const baseURL = "http://localhost:3002/movies";
-    const response = await fetch(baseURL);
-    const data = await response.json();
-    this.setState({movies: data})
-  } */
-
   async componentDidMount() {
     const response = await axios.get("http://localhost:3002/movies");
     this.setState({ movies: response.data })
   }
 
+  // Search Movie
   searchMovie = (event) => {
     this.setState({ searchQuery: event.target.value })
   }
 
-  /* deleteMovie = (movie) => {
-    const newMovieList = this.state.movies.filter(
-      m => m.id !== movie.id
-    );
-
-    // this.setState({ movies: newMovieList })
-
+  // Add Movie
+  addMovie = async (movie) => {
+    await axios.post(`http://localhost:3002/movies/`, movie)
     this.setState(state => ({
-      movies: newMovieList
+      movies: state.movies.concat([movie])
     }))
-  } */
+  }
 
-  // Fetch API
-  /* deleteMovie = async (movie) => {
-
-    const baseURL = `http://localhost:3002/movies/${movie.id}`;
-    await fetch(baseURL, {
-      method: "DELETE"
-    })
-
-    const newMovieList = this.state.movies.filter(
-      m => m.id !== movie.id
-    );
-
-    this.setState(state => ({
-      movies: newMovieList
-    }))
-  } */
-
-  // Axios
+  // Delete Movie
   deleteMovie = async (movie) => {
 
     axios.delete(`http://localhost:3002/movies/${movie.id}`);
@@ -99,7 +72,7 @@ class App extends React.Component {
               </>}>
             </Route>
 
-            <Route path='/add' element={<AddMovie />}></Route>
+            <Route path='/add' element={<AddMovie onAddMovie={(movie) => { this.addMovie(movie) }} />}></Route>
           </Routes>
         </div>
 
