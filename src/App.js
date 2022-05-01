@@ -1,7 +1,9 @@
 import React from 'react';
 import Search from './components/Search';
 import MovieList from './components/MovieList';
+import AddMovie from './components/AddMovie';
 import axios from 'axios';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 class App extends React.Component {
   state = {
@@ -78,18 +80,30 @@ class App extends React.Component {
     )
 
     return (
-      <div className='container'>
-        <div className='row'>
-          <div className='col-lg-12'>
-            <Search searchMovieProp={this.searchMovie} />
-          </div>
+      <Router>
+
+        <div className='container'>
+          <Routes>
+            <Route path='/' element={
+              <>
+                <div className='row'>
+                  <div className='col-lg-12'>
+                    <Search searchMovieProp={this.searchMovie} />
+                  </div>
+                </div>
+
+                <MovieList
+                  movies={filteredMovies}
+                  deleteMovieProp={this.deleteMovie}
+                />
+              </>}>
+            </Route>
+
+            <Route path='/add' element={<AddMovie />}></Route>
+          </Routes>
         </div>
 
-        <MovieList
-          movies={filteredMovies}
-          deleteMovieProp={this.deleteMovie}
-        />
-      </div>
+      </Router>
     )
   }
 }
