@@ -43,25 +43,11 @@
       "id": 7
     },
     {
-      "name": "Intouchables",
-      "rating": "8.5",
-      "imgURL": "https://m.media-amazon.com/images/M/MV5BODY0MDM1MDE2OV5BMl5BanBnXkFtZTcwMzEyMjkyNw@@._V1_.jpg",
-      "overview": "After he becomes a quadriplegic from a paragliding accident, an aristocrat hires a young man from the projects to be his caregiver.",
-      "id": 8
-    },
-    {
       "name": "Ford v Ferrari",
       "rating": "8.1",
       "imgURL": "https://m.media-amazon.com/images/M/MV5BM2UwMDVmMDItM2I2Yi00NGZmLTk4ZTUtY2JjNTQ3OGQ5ZjM2XkEyXkFqcGdeQXVyMTA1OTYzOTUx._V1_.jpg",
       "overview": "American car designer Carroll Shelby and driver Ken Miles battle corporate interference and the laws of physics to build a revolutionary race car for Ford in order to defeat Ferrari at the 24 Hours of Le Mans in 1966.",
       "id": 9
-    },
-    {
-      "name": "asd",
-      "rating": "asd",
-      "imgURL": "asd",
-      "overview": "asd",
-      "id": 10
     }
   ]
 }
