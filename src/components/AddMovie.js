@@ -1,5 +1,6 @@
 import React from "react";
 import serialize from 'form-serialize';
+import { useNavigate } from 'react-router-dom';
 
 class AddMovie extends React.Component {
 
@@ -8,6 +9,7 @@ class AddMovie extends React.Component {
         const newMovie = serialize(e.target, { hash: true });
         // console.log(newMovie);
         this.props.onAddMovie(newMovie);
+        this.props.navigate('/');
     }
 
     render() {
@@ -59,4 +61,9 @@ class AddMovie extends React.Component {
     }
 }
 
-export default AddMovie;
+function WithNavigate(props) {
+    let navigate = useNavigate();
+    return <AddMovie {...props} navigate={navigate} />
+}
+
+export default WithNavigate;
