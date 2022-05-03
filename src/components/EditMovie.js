@@ -15,7 +15,7 @@ class EditMovie extends React.Component {
         const id = window.location.pathname.replace("/edit/", "");
 
         const response = await axios.get(`http://localhost:3002/movies/${id}`)
-        
+
         const movie = response.data;
 
         this.setState({
@@ -26,8 +26,28 @@ class EditMovie extends React.Component {
         })
     }
 
+    onInputChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
     handleFormSubmit = (e) => {
         e.preventDefault();
+
+        /* const name = this.state.name;
+        const rating = this.state.rating;
+        const overview = this.state.overview;
+        const imgURL = this.state.imgURL; */
+
+        const { name, rating, overview, imgURL } = this.state;
+
+        const id = window.location.pathname.replace("/edit/", "");
+
+        const updatedMovie = { name, rating, overview, imgURL };
+
+        this.props.onEditMovie(id, updatedMovie);
+        this.props.navigate('/');
     }
 
     render() {
@@ -43,6 +63,7 @@ class EditMovie extends React.Component {
                                 className="form-control"
                                 name="name"
                                 value={this.state.name}
+                                onChange={this.onInputChange}
                                 required />
                         </div>
                         <div className="form-group col-md-2">
@@ -52,6 +73,7 @@ class EditMovie extends React.Component {
                                 className="form-control"
                                 name="rating"
                                 value={this.state.rating}
+                                onChange={this.onInputChange}
                                 required />
                         </div>
                     </div>
@@ -63,6 +85,7 @@ class EditMovie extends React.Component {
                                 className="form-control"
                                 name="imgURL"
                                 value={this.state.imgURL}
+                                onChange={this.onInputChange}
                                 required />
                         </div>
                     </div>
@@ -73,7 +96,8 @@ class EditMovie extends React.Component {
                                 required
                                 value={this.state.overview}
                                 className="form-control"
-                                name="overview" rows="5"></textarea>
+                                name="overview" rows="5"
+                                onChange={this.onInputChange}></textarea>
                         </div>
                     </div>
                     <input type="submit" className="btn btn-warning w-100 mt-2" value="Edit Movie" />
